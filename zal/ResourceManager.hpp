@@ -1,6 +1,6 @@
 class ResourceManager
 {
-    Resource* Q;
+    Resource* Q = nullptr;
 
 public:
     ResourceManager() { Q=new Resource;}
