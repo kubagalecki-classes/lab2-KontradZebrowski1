@@ -5,7 +5,7 @@
 class ResourceManager
 {
   public:
-    ResourceManager(Resource& klient) : Zasob{klient} {}
+    //ResourceManager(Resource& klient) : Zasob{klient} {}
     ResourceManager() {Zasob = new Resource;}
     double get()
     {        
