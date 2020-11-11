@@ -6,14 +6,12 @@ class ResourceManager
 {
   public:
     ResourceManager(Resource& klient) : Zasob{klient} {}
-
+    ResourceManager() {Zasob = new Resource;}
     double get()
-    {
-      double a = Zasob.get();
-      return a;
+    {        
+      return Zasob.get();
     }
 
   private:
-  Resource& Zasob;  // Twoja implementacja tutaj
+  Resource* Zasob;  // Twoja implementacja tutaj
 };
-
