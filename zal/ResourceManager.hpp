@@ -4,5 +4,14 @@
 
 class ResourceManager
 {
-    // Twoja implementacja tutaj
+  public:
+    ResourceManager(Resource& klient) : Zasob{klient} {}
+    ResourceManager() {Zasob = new Resource;}
+    double get()
+    {        
+      return Zasob.get();
+    }
+
+  private:
+  Resource* Zasob;  // Twoja implementacja tutaj
 };
