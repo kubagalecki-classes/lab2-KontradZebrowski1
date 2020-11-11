@@ -1,17 +1,22 @@
-#pragma once
-
-#include "Resource.hpp"
-
 class ResourceManager
 {
-  public:
-    //ResourceManager(Resource& klient) : Zasob{klient} {}
-    ResourceManager() {Zasob = new Resource;}
-    double get()
-    {        
-      return Zasob.get();
-    }
+    Resource* Q;
 
-  private:
-  Resource* Zasob;  // Twoja implementacja tutaj
+public:
+    ResourceManager() { Q=new Resource;}
+    ~ResourceManager() { delete Q; }
+    double get() { return Q->get(); }
+    ResourceManager(const ResourceManager& aa)
+     {
+ Q=new Resource{*aa.Q};
+     }
+    ResourceManager& operator=(const ResourceManager& aa)
+    { if(this!=&aa)
+        {delete Q;
+        Q=new Resource {*aa.Q};
+        }
+        return *this;
+        
+    }
+    
 };
